@@ -4,4 +4,4 @@ app = Flask(__name__)
 
 @app.route('/api/flask/')
 def getTime(path):
-    return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    return Response("%s" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), mimetype='text/html')
