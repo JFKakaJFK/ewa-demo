@@ -7,5 +7,5 @@ import (
 )
 
 func Time(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello world")
+	fmt.Fprintf(w, time.Now().Format(time.RFC1123Z))
 }
