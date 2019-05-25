@@ -2,7 +2,7 @@ import Time from '../components/time'
 import 'isomorphic-unfetch'
 
 const langs = [
-  { name: 'Go', path: 'go', ext: '.go' },
+  { name: 'PHP', path: 'php', ext: '.php' },
   { name: 'Python', path: 'python', ext: '.py' },
   { name: 'Bash', path: 'bash', ext: '.sh' },
   { name: 'Node.js', path: 'node', ext: '.js' },
@@ -10,19 +10,13 @@ const langs = [
 ]
 
 const Page = ({nows}) => <div className="container">
-    <div className="clocks">
-      {nows.map(({name, path, ext, now}) => 
-        <a href={`https://zeit.co/now-examples/monorepo/4csp3st7w/source?f=src/${path}/index${ext}`} target="_blank" title={name} key={path}>
-          <Time 
-            name={name}
-            path={path}
-            now={now}
-          />
-        </a>
-      )}
-    </div>
-    
-    <style jsx global>{`
+  <div className="clocks">
+    {nows.map(({ name, path, ext, now }) => <a href={`https://zeit.co/now-examples/monorepo/4csp3st7w/source?f=src/${path}/index${ext}`} target="_blank" title={name} key={path}>
+      <Time name={name} path={path} now={now} />
+    </a>)}
+  </div>
+
+  <style jsx global>{`
       * {
         box-sizing: border-box;
       }
@@ -152,7 +146,7 @@ const Page = ({nows}) => <div className="container">
         }
       }
     `}</style>
-  </div>
+</div>
 
 Page.getInitialProps = async ({req}) => {
   const protocol = req.headers['x-forwarded-proto']
