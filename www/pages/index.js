@@ -10,15 +10,6 @@ const langs = [
 ]
 
 const Page = ({nows}) => <div className="container">
-    <div className="logo">
-      <svg width={40} height={36}>
-        <path
-          d="M20 .1L.1 35.8h39.7L20 0zm-1.7 7.2l14.5 26.4H3.6L18.3 7.3z"
-          fill="#fff"
-          fillRule="nonzero"
-        />
-      </svg>
-    </div>
     <div className="clocks">
       {nows.map(({name, path, ext, now}) => 
         <a href={`https://zeit.co/now-examples/monorepo/4csp3st7w/source?f=src/${path}/index${ext}`} target="_blank" title={name} key={path}>
@@ -30,13 +21,7 @@ const Page = ({nows}) => <div className="container">
         </a>
       )}
     </div>
-    <div className="intro">
-      <hr/>
-      <h2>What is this?</h2>
-      <p>We built this deployment to showcase the power and flexibility of <a href="https://zeit.co/blog/now-2" target="_blank">Now 2.0</a>. It's organized as a monorepo that combines multiple technologies.</p>
-      <p>The entrypoint to this deployment is a Next.js application, compiled to serverless functions that server-render on-demand.</p>
-      <p>Thanks to our <a href="https://zeit.co/docs/v2/deployments/builders/overview" title="builders" target="_blank">builders</a>, you are not limited to just static or dynamic, Go or Node.js. The possibilities are endless.</p>
-    </div>
+    
     <style jsx global>{`
       * {
         box-sizing: border-box;
