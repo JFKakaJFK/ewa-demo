@@ -37,7 +37,7 @@ export default class extends React.Component {
     const { name, path, src } = this.props
     let { x, y } = this.state
     return (
-      <span className="logo" style={{transform: `translate3d(${x}vw, ${y}vh, 0)`}}>
+      <span className="logo" style={{transform: `translate3d(${x - 50}vw, ${y - 50}vh, 0)`}}>
         <img src={src} title={name} width="100" height="100"/>
       </span>
     ) 
