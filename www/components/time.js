@@ -18,11 +18,7 @@ export default class extends React.Component {
         const res = await fetch(url)
         if (res.ok) {
           const now = (await res.text()).trim()
-          if (now !== this.state.now) {
-            this.setState({now})
-          }
-        } else {
-          console.log(`res not ok from ${url}`)
+          this.setState({now})
         }
       } catch (err) {
         console.error(`Could not fetch time from ${url}`)
@@ -41,8 +37,8 @@ export default class extends React.Component {
     const { name } = this.props
     const { now } = this.state
     return (
-      <div className="clock">
-        The current time,<br/> according to <span>{name}</span>, is: <time key={now}>{now}</time>
+      <div>
+        <span>{name}</span><time key={now}>{now}</time>
       </div>
     ) 
   }

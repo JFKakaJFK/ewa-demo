@@ -1,7 +1,6 @@
-from flask import Flask, make_response
+from flask import Flask
 app = Flask(__name__)
 
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def catch_all(path):
-    return make_response('{"x":123,"y":345}', 200)
+@app.route('/')
+def index(path):
+    return '{"x":123,"y":345}'

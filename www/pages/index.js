@@ -9,13 +9,17 @@ const langs = [
   { name: 'Flask', path: 'flask', ext: '.py' }
 ]
 
-const Page = ({nows}) => <div className="container">
-  <div className="clocks">
-    {nows.map(({ name, path, ext, now }) => <a href={`https://zeit.co/now-examples/monorepo/4csp3st7w/source?f=src/${path}/index${ext}`} target="_blank" title={name} key={path}>
-      <Time name={name} path={path} now={now} />
-    </a>)}
+const Page = ({nows}) => (
+  <div className="container">
+    <div className="clocks">
+      {nows.map(({ name, path, ext, now }) => (
+        <a href="#" title={name} key={path}>
+          <Time name={name} path={path} now={now} />
+        </a>
+      ))}
+    </div>
   </div>
-</div>
+)
 
 Page.getInitialProps = async ({req}) => {
   const protocol = req.headers['x-forwarded-proto']
