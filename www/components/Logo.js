@@ -22,7 +22,7 @@ export default class extends React.Component {
       this.setState(position)
     }
 
-    this.timeout = setTimeout(this._update, 1000)
+    this.timeout = setTimeout(this._update, 2000)
   }
 
   componentDidMount() {

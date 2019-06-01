@@ -34,10 +34,27 @@ const Page = () => (
         font-weight: 400;
       }
       .logo {
-        transition: transform .1s ease-in-out;
+        transition: transform 10s linear;
         position: absolute;
         top: calc(50% - 50px);
         left: calc(50% - 50px);
+      }
+      .footer {
+        position: absolute;
+        bottom: 3rem;
+        width: 100%;
+        text-align: center;
+      }
+      a,
+      a:link,
+      a:visited {
+        color: #29d;
+        text-decoration: none;
+      }
+      a:hover,
+      a:active {
+        color: #29d;
+        text-decoration: underline;
       }
     `}</style>
   </div>
