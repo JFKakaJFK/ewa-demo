@@ -16,9 +16,6 @@ const Page = () => (
     ))}
     <p className="footer">Logos von <a href="https://worldvectorlogo.com" target="_blank">worldvectorlogo.com</a></p>
     <style jsx global>{`
-      * {
-        box-sizing: border-box;
-      }
       html, body {
         height: 100%;
         width: 100%
@@ -34,7 +31,7 @@ const Page = () => (
         font-weight: 400;
       }
       .logo {
-        transition: transform 10s linear;
+        transition: transform 6s linear;
         position: absolute;
         top: calc(50% - 50px);
         left: calc(50% - 50px);

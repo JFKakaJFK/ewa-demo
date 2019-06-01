@@ -18,7 +18,6 @@ export default class extends React.Component {
     const res = await fetch(url)
     if (res.ok) {
       const position = await res.json()
-      console.log(position, res)
       this.setState(position)
     }
 
@@ -34,7 +33,7 @@ export default class extends React.Component {
   }
 
   render () {
-    const { name, path, src } = this.props
+    const { name, src } = this.props
     let { x, y } = this.state
     return (
       <span className="logo" style={{transform: `translate3d(${x - 50}vw, ${y - 50}vh, 0)`}}>
