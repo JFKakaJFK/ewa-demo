@@ -4,4 +4,4 @@ app = Flask(__name__)
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def catch_all(path):
-    return Response('{"x":123,"y":345}' % (path), mimetype="text/html")
+    return Response('{"x":123,"y":345}' % (path), mimetype="application/json")
