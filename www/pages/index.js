@@ -1,36 +1,20 @@
 import Logo from '../components/Logo'
 import 'isomorphic-unfetch'
 
-const langs = [
-  { name: 'PHP', path: 'php', ext: '.php' },
-  { name: 'Python', path: 'python', ext: '.py' },
-  { name: 'Bash', path: 'bash', ext: '.sh' },
-  { name: 'Node.js', path: 'node', ext: '.js' },
-  { name: 'Flask', path: 'flask', ext: '.py' }
+const apis = [
+  { name: 'PHP', path: 'php', src: '../static/php.svg' },
+  { name: 'Python', path: 'python', src: '../static/python.svg' },
+  { name: 'Bash', path: 'bash', src: '../static/bash.svg' },
+  { name: 'Node.js', path: 'node', src: '../static/node.svg' },
+  { name: 'Flask', path: 'flask', src: '../static/flask.svg' }
 ]
 
 const Page = () => (
   <div>
-    {langs.map(({ name, path }) => (
-      <a href="#" title={name} key={path}>
-        name, path
-      </a>
+    {apis.map(({ name, path, src }) => (
+      <Logo key={path} name={name} path={path} src={src} />
     ))}
   </div>
 )
-
-/*
-Page.getInitialProps = async ({req}) => {
-  const protocol = req.headers['x-forwarded-proto']
-  const host = req.headers['x-forwarded-host'] || req.headers.host
-  const baseUrl = `${protocol}://${host}/api`
-  const nows = await Promise.all(langs.map(async ({name, path}) => {
-    const now = await (await fetch(`${baseUrl}/${path}`)).text()
-    return {name, path, now}
-  }))
-
-  return { nows }
-}
-*/
 
 export default Page

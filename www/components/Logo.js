@@ -4,29 +4,28 @@ import 'isomorphic-unfetch'
 export default class extends React.Component {
   constructor(props) {
     super(props)
+
     this.state = {
-      now: props.now
+      x: 50,
+      y: 50,
+      url: `${location.href}api/${props.path}`,
     }
   }
 
-  componentDidMount() {
-    const { path } = this.props
-    const url = `${location.href}api/${path}`
+  _update = async () => {
+    const { url } = this.state
 
-    const update = async () => {
-      try {
-        const res = await fetch(url)
-        if (res.ok) {
-          const now = (await res.text()).trim()
-          this.setState({now})
-        }
-      } catch (err) {
-        console.error(`Could not fetch time from ${url}`)
-      }
-      this.timeout = setTimeout(update, 1000)
+    const res = await fetch(url)
+    if (res.ok) {
+      const position = await res.json()
+      this.setState(position)
     }
 
-    this.timeout = setTimeout(update, 1000)
+    this.timeout = setTimeout(this._update, 1000)
+  }
+
+  componentWillMount() {
+    this._update()
   }
 
   componentWillUnmount() {
@@ -34,13 +33,13 @@ export default class extends React.Component {
   }
 
   render () {
-    const { name } = this.props
-    const { now } = this.state
-    let { x, y } = now.json();
+    const { name, path, src } = this.props
+    let { x, y } = this.state
     return (
-      <div>
-        <span style={`transform: translate3d(${x}vw,${y}vh, 0)`}>{name}</span>
-      </div>
+      <span>
+        x{x}y{y}
+        <img src={src} title={name} />
+      </span>
     ) 
   }
 }
