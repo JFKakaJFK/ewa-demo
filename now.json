@@ -3,7 +3,7 @@
     "version": 2,
     "builds": [
         { "src": "www/package.json", "use": "@now/next" },
-        { "src": "api/php/*.php", "use": "@now/php" }
+        { "src": "api/php/*.php", "use": "@now/php" },
         { "src": "api/python/*.py", "use": "@now/python" },
         { "src": "api/bash/*.sh", "use": "@now/bash" },
         { "src": "api/node/*.js", "use": "@now/node" }
@@ -12,13 +12,6 @@
         {
           "src": "/api/(.*)",
           "dest": "/api/$1"
-        },
-        {
-          "src": "/redirect-test",
-          "status": 302,
-          "headers": {
-            "location": "https://google.com"
-          }
         },
         {
           "src": "/(.*)",
