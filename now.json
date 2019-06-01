@@ -6,7 +6,8 @@
         { "src": "api/php/*.php", "use": "@now/php" },
         { "src": "api/python/*.py", "use": "@now/python" },
         { "src": "api/bash/*.sh", "use": "@now/bash" },
-        { "src": "api/node/*.js", "use": "@now/node" }
+        { "src": "api/node/*.js", "use": "@now/node" },
+        { "src": "api/flask/*.py", "use": "@now/python" }
     ],
     "routes": [
         {
