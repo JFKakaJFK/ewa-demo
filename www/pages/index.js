@@ -9,16 +9,17 @@ const langs = [
   { name: 'Flask', path: 'flask', ext: '.py' }
 ]
 
-const Page = ({nows}) => (
+const Page = () => (
   <div>
-    {nows.map(({ name, path, now }) => (
+    {langs.map(({ name, path }) => (
       <a href="#" title={name} key={path}>
-        <Logo name={name} path={path} now={now} />
+        name, path
       </a>
     ))}
   </div>
 )
 
+/*
 Page.getInitialProps = async ({req}) => {
   const protocol = req.headers['x-forwarded-proto']
   const host = req.headers['x-forwarded-host'] || req.headers.host
@@ -30,5 +31,6 @@ Page.getInitialProps = async ({req}) => {
 
   return { nows }
 }
+*/
 
 export default Page
