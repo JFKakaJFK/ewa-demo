@@ -18,13 +18,14 @@ export default class extends React.Component {
     const res = await fetch(url)
     if (res.ok) {
       const position = await res.json()
+      console.log(position, res)
       this.setState(position)
     }
 
     this.timeout = setTimeout(this._update, 1000)
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this._update()
   }
 
@@ -38,7 +39,7 @@ export default class extends React.Component {
     return (
       <span>
         x{x}y{y}
-        <img src={src} title={name} />
+        <img src={src} title={name} width="100" height="100"/>
       </span>
     ) 
   }

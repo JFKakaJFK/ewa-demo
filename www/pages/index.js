@@ -11,12 +11,10 @@ const apis = [
 
 const Page = () => (
   <div>
-    {apis.map(({ name, path, src }) => (
-      
-      <span>
-        <img src={src} title={name} />
-      </span>
+    {apis.map((api) => (
+      <Logo name={api.name} path={api.path} src={api.src} />
     ))}
+    <p>Logos von <a href="https://worldvectorlogo.com" target="_blank">worldvectorlogo.com</a></p>
   </div>
 )
 
