@@ -11,5 +11,6 @@ class handler(BaseHTTPRequestHandler):
         # self.wfile.write(json.dumps({'x': random.randint(0, 100), 'y': random.randint(0,100)}))
         #self.wfile.write(json.dumps({'hello': 'world', 'received': 'ok'}))
         # self.wfile.write('{"x":"' + random.randint(0, 100) + '","y":"' + random.randint(0, 100) + '"}')
-        self.wfile.write('{"x":100,"y":23')
+        self.wfile.write(str('{"x":100,"y":23').encode())
+        
         return
