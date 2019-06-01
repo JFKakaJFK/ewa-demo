@@ -11,7 +11,7 @@ const langs = [
 
 const Page = ({nows}) => (
   <div>
-    {nows.map(({ name, path, ext, now }) => (
+    {nows.map(({ name, path, now }) => (
       <a href="#" title={name} key={path}>
         <Logo name={name} path={path} now={now} />
       </a>
@@ -23,9 +23,9 @@ Page.getInitialProps = async ({req}) => {
   const protocol = req.headers['x-forwarded-proto']
   const host = req.headers['x-forwarded-host'] || req.headers.host
   const baseUrl = `${protocol}://${host}/api`
-  const nows = await Promise.all(langs.map(async ({name, path, ext}) => {
+  const nows = await Promise.all(langs.map(async ({name, path}) => {
     const now = await (await fetch(`${baseUrl}/${path}`)).text()
-    return {name, path, now, ext}
+    return {name, path, now}
   }))
 
   return { nows }
