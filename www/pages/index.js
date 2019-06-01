@@ -1,4 +1,4 @@
-import Time from '../components/time'
+import Logo from '../components/Logo'
 import 'isomorphic-unfetch'
 
 const langs = [
@@ -10,14 +10,12 @@ const langs = [
 ]
 
 const Page = ({nows}) => (
-  <div className="container">
-    <div className="clocks">
-      {nows.map(({ name, path, ext, now }) => (
-        <a href="#" title={name} key={path}>
-          <Time name={name} path={path} now={now} />
-        </a>
-      ))}
-    </div>
+  <div>
+    {nows.map(({ name, path, ext, now }) => (
+      <a href="#" title={name} key={path}>
+        <Logo name={name} path={path} now={now} />
+      </a>
+    ))}
   </div>
 )
 

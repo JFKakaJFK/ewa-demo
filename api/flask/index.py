@@ -4,4 +4,4 @@ app = Flask(__name__)
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def catch_all(path):
-    return Response('{"x":123,"y":345}', mimetype="text/plain")
+    return Response('{"x":%d,"y":%d}' % (random.randint(0, 100), random.randint(0, 100)), mimetype="text/plain")

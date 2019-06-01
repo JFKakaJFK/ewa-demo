@@ -36,9 +36,10 @@ export default class extends React.Component {
   render () {
     const { name } = this.props
     const { now } = this.state
+    let { x, y } = now.json();
     return (
       <div>
-        <span>{name}</span><time key={now}>{now}</time>
+        <span style={`transform: translate3d(${x}vw,${y}vh, 0)`}>{name}</span>
       </div>
     ) 
   }
