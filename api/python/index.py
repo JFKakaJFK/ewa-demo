@@ -7,5 +7,6 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type','application/json')
         self.end_headers()
-        self.wfile.write(str('{"x":' + random.randint(0, 100) + ',"y":' + random.randint(0, 100) + '}').encode())
+        # self.wfile.write(str('{"x":' + random.randint(0, 100) + ',"y":' + random.randint(0, 100) + '}').encode())
+        self.wfile.write(str('{"x":54,"y":55}').encode())
         return
