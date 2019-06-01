@@ -14,7 +14,35 @@ const Page = () => (
     {apis.map((api) => (
       <Logo name={api.name} path={api.path} src={api.src} />
     ))}
-    <p>Logos von <a href="https://worldvectorlogo.com" target="_blank">worldvectorlogo.com</a></p>
+    <p className="footer">Logos von <a href="https://worldvectorlogo.com" target="_blank">worldvectorlogo.com</a></p>
+    <style jsx global>{`
+      * {
+        box-sizing: border-box;
+      }
+      html, body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        color: white;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing:grayscale;
+        background: radial-gradient(circle, #333, #333 1px, #000 1px, #000);
+        background-size: 28px 28px;
+        background-position: center;
+        font-size: 18px;
+        line-height: 1.6;
+        font-weight: 400;
+      }
+      .logo {
+        transition: transform .1s ease-in-out;
+        position: absolute;
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+      }
+    `}</style>
   </div>
 )
 

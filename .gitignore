@@ -1,1 +1,5 @@
-/www/node_modules/**
+/**/node_modules/**
+.import-cache/
+.now/
+bootstrap
+www/.next/

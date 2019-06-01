@@ -8,7 +8,7 @@ export default class extends React.Component {
     this.state = {
       x: 50,
       y: 50,
-      url: `${location.href}api/${props.path}`,
+      url: `/api/${props.path}`,
     }
   }
 
@@ -37,8 +37,7 @@ export default class extends React.Component {
     const { name, path, src } = this.props
     let { x, y } = this.state
     return (
-      <span>
-        x{x}y{y}
+      <span className="logo" style={{transform: `translate3d(${x}vw, ${y}vh, 0)`}}>
         <img src={src} title={name} width="100" height="100"/>
       </span>
     ) 
