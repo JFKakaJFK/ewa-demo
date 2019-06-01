@@ -12,7 +12,10 @@ const apis = [
 const Page = () => (
   <div>
     {apis.map(({ name, path, src }) => (
-      <Logo key={path} name={name} path={path} src={src} />
+      
+      <span>
+        <img src={src} title={name} />
+      </span>
     ))}
   </div>
 )
